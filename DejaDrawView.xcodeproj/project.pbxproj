@@ -14,6 +14,7 @@
 		9FA90F0B1B5547ED0072C55F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA90F091B5547ED0072C55F /* LaunchScreen.storyboard */; };
 		9FA90F161B5547ED0072C55F /* DejaDrawViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA90F151B5547ED0072C55F /* DejaDrawViewTests.swift */; };
 		9FA90F211B5547ED0072C55F /* DejaDrawViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA90F201B5547ED0072C55F /* DejaDrawViewUITests.swift */; };
+		9FA90F2F1B5547FB0072C55F /* DejaDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA90F2E1B5547FB0072C55F /* DejaDrawView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9FA90F1C1B5547ED0072C55F /* DejaDrawViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DejaDrawViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA90F201B5547ED0072C55F /* DejaDrawViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DejaDrawViewUITests.swift; sourceTree = "<group>"; };
 		9FA90F221B5547ED0072C55F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FA90F2E1B5547FB0072C55F /* DejaDrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DejaDrawView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				9FA90F001B5547ED0072C55F /* AppDelegate.swift */,
 				9FA90F021B5547ED0072C55F /* ViewController.swift */,
+				9FA90F2E1B5547FB0072C55F /* DejaDrawView.swift */,
 				9FA90F041B5547ED0072C55F /* Main.storyboard */,
 				9FA90F071B5547ED0072C55F /* Assets.xcassets */,
 				9FA90F091B5547ED0072C55F /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FA90F031B5547ED0072C55F /* ViewController.swift in Sources */,
+				9FA90F2F1B5547FB0072C55F /* DejaDrawView.swift in Sources */,
 				9FA90F011B5547ED0072C55F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
