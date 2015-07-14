@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9FA90F011B5547ED0072C55F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA90F001B5547ED0072C55F /* AppDelegate.swift */; };
+		9FA90F031B5547ED0072C55F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA90F021B5547ED0072C55F /* ViewController.swift */; };
+		9FA90F061B5547ED0072C55F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA90F041B5547ED0072C55F /* Main.storyboard */; };
+		9FA90F081B5547ED0072C55F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FA90F071B5547ED0072C55F /* Assets.xcassets */; };
+		9FA90F0B1B5547ED0072C55F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA90F091B5547ED0072C55F /* LaunchScreen.storyboard */; };
+		9FA90F161B5547ED0072C55F /* DejaDrawViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA90F151B5547ED0072C55F /* DejaDrawViewTests.swift */; };
+		9FA90F211B5547ED0072C55F /* DejaDrawViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA90F201B5547ED0072C55F /* DejaDrawViewUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9FA90F121B5547ED0072C55F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FA90EF51B5547ED0072C55F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FA90EFC1B5547ED0072C55F;
+			remoteInfo = DejaDrawView;
+		};
+		9FA90F1D1B5547ED0072C55F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FA90EF51B5547ED0072C55F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FA90EFC1B5547ED0072C55F;
+			remoteInfo = DejaDrawView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9FA90EFD1B5547ED0072C55F /* DejaDrawView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DejaDrawView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA90F001B5547ED0072C55F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9FA90F021B5547ED0072C55F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9FA90F051B5547ED0072C55F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9FA90F071B5547ED0072C55F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9FA90F0A1B5547ED0072C55F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9FA90F0C1B5547ED0072C55F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FA90F111B5547ED0072C55F /* DejaDrawViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DejaDrawViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA90F151B5547ED0072C55F /* DejaDrawViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DejaDrawViewTests.swift; sourceTree = "<group>"; };
+		9FA90F171B5547ED0072C55F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FA90F1C1B5547ED0072C55F /* DejaDrawViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DejaDrawViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA90F201B5547ED0072C55F /* DejaDrawViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DejaDrawViewUITests.swift; sourceTree = "<group>"; };
+		9FA90F221B5547ED0072C55F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9FA90EFA1B5547ED0072C55F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FA90F0E1B5547ED0072C55F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FA90F191B5547ED0072C55F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9FA90EF41B5547ED0072C55F = {
+			isa = PBXGroup;
+			children = (
+				9FA90EFF1B5547ED0072C55F /* DejaDrawView */,
+				9FA90F141B5547ED0072C55F /* DejaDrawViewTests */,
+				9FA90F1F1B5547ED0072C55F /* DejaDrawViewUITests */,
+				9FA90EFE1B5547ED0072C55F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9FA90EFE1B5547ED0072C55F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FA90EFD1B5547ED0072C55F /* DejaDrawView.app */,
+				9FA90F111B5547ED0072C55F /* DejaDrawViewTests.xctest */,
+				9FA90F1C1B5547ED0072C55F /* DejaDrawViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FA90EFF1B5547ED0072C55F /* DejaDrawView */ = {
+			isa = PBXGroup;
+			children = (
+				9FA90F001B5547ED0072C55F /* AppDelegate.swift */,
+				9FA90F021B5547ED0072C55F /* ViewController.swift */,
+				9FA90F041B5547ED0072C55F /* Main.storyboard */,
+				9FA90F071B5547ED0072C55F /* Assets.xcassets */,
+				9FA90F091B5547ED0072C55F /* LaunchScreen.storyboard */,
+				9FA90F0C1B5547ED0072C55F /* Info.plist */,
+			);
+			path = DejaDrawView;
+			sourceTree = "<group>";
+		};
+		9FA90F141B5547ED0072C55F /* DejaDrawViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				9FA90F151B5547ED0072C55F /* DejaDrawViewTests.swift */,
+				9FA90F171B5547ED0072C55F /* Info.plist */,
+			);
+			path = DejaDrawViewTests;
+			sourceTree = "<group>";
+		};
+		9FA90F1F1B5547ED0072C55F /* DejaDrawViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9FA90F201B5547ED0072C55F /* DejaDrawViewUITests.swift */,
+				9FA90F221B5547ED0072C55F /* Info.plist */,
+			);
+			path = DejaDrawViewUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9FA90EFC1B5547ED0072C55F /* DejaDrawView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FA90F251B5547ED0072C55F /* Build configuration list for PBXNativeTarget "DejaDrawView" */;
+			buildPhases = (
+				9FA90EF91B5547ED0072C55F /* Sources */,
+				9FA90EFA1B5547ED0072C55F /* Frameworks */,
+				9FA90EFB1B5547ED0072C55F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DejaDrawView;
+			productName = DejaDrawView;
+			productReference = 9FA90EFD1B5547ED0072C55F /* DejaDrawView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9FA90F101B5547ED0072C55F /* DejaDrawViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FA90F281B5547ED0072C55F /* Build configuration list for PBXNativeTarget "DejaDrawViewTests" */;
+			buildPhases = (
+				9FA90F0D1B5547ED0072C55F /* Sources */,
+				9FA90F0E1B5547ED0072C55F /* Frameworks */,
+				9FA90F0F1B5547ED0072C55F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FA90F131B5547ED0072C55F /* PBXTargetDependency */,
+			);
+			name = DejaDrawViewTests;
+			productName = DejaDrawViewTests;
+			productReference = 9FA90F111B5547ED0072C55F /* DejaDrawViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9FA90F1B1B5547ED0072C55F /* DejaDrawViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FA90F2B1B5547ED0072C55F /* Build configuration list for PBXNativeTarget "DejaDrawViewUITests" */;
+			buildPhases = (
+				9FA90F181B5547ED0072C55F /* Sources */,
+				9FA90F191B5547ED0072C55F /* Frameworks */,
+				9FA90F1A1B5547ED0072C55F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FA90F1E1B5547ED0072C55F /* PBXTargetDependency */,
+			);
+			name = DejaDrawViewUITests;
+			productName = DejaDrawViewUITests;
+			productReference = 9FA90F1C1B5547ED0072C55F /* DejaDrawViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9FA90EF51B5547ED0072C55F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Markus Schlegel";
+				TargetAttributes = {
+					9FA90EFC1B5547ED0072C55F = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					9FA90F101B5547ED0072C55F = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 9FA90EFC1B5547ED0072C55F;
+					};
+					9FA90F1B1B5547ED0072C55F = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 9FA90EFC1B5547ED0072C55F;
+					};
+				};
+			};
+			buildConfigurationList = 9FA90EF81B5547ED0072C55F /* Build configuration list for PBXProject "DejaDrawView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9FA90EF41B5547ED0072C55F;
+			productRefGroup = 9FA90EFE1B5547ED0072C55F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FA90EFC1B5547ED0072C55F /* DejaDrawView */,
+				9FA90F101B5547ED0072C55F /* DejaDrawViewTests */,
+				9FA90F1B1B5547ED0072C55F /* DejaDrawViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9FA90EFB1B5547ED0072C55F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA90F0B1B5547ED0072C55F /* LaunchScreen.storyboard in Resources */,
+				9FA90F081B5547ED0072C55F /* Assets.xcassets in Resources */,
+				9FA90F061B5547ED0072C55F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FA90F0F1B5547ED0072C55F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FA90F1A1B5547ED0072C55F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FA90EF91B5547ED0072C55F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA90F031B5547ED0072C55F /* ViewController.swift in Sources */,
+				9FA90F011B5547ED0072C55F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FA90F0D1B5547ED0072C55F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA90F161B5547ED0072C55F /* DejaDrawViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FA90F181B5547ED0072C55F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA90F211B5547ED0072C55F /* DejaDrawViewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9FA90F131B5547ED0072C55F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9FA90EFC1B5547ED0072C55F /* DejaDrawView */;
+			targetProxy = 9FA90F121B5547ED0072C55F /* PBXContainerItemProxy */;
+		};
+		9FA90F1E1B5547ED0072C55F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9FA90EFC1B5547ED0072C55F /* DejaDrawView */;
+			targetProxy = 9FA90F1D1B5547ED0072C55F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9FA90F041B5547ED0072C55F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FA90F051B5547ED0072C55F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9FA90F091B5547ED0072C55F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FA90F0A1B5547ED0072C55F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9FA90F231B5547ED0072C55F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9FA90F241B5547ED0072C55F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9FA90F261B5547ED0072C55F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DejaDrawView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markus-schlegel.DejaDrawView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9FA90F271B5547ED0072C55F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DejaDrawView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markus-schlegel.DejaDrawView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9FA90F291B5547ED0072C55F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DejaDrawViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markus-schlegel.DejaDrawViewTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DejaDrawView.app/DejaDrawView";
+			};
+			name = Debug;
+		};
+		9FA90F2A1B5547ED0072C55F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DejaDrawViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markus-schlegel.DejaDrawViewTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DejaDrawView.app/DejaDrawView";
+			};
+			name = Release;
+		};
+		9FA90F2C1B5547ED0072C55F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DejaDrawViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markus-schlegel.DejaDrawViewUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DejaDrawView;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		9FA90F2D1B5547ED0072C55F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DejaDrawViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markus-schlegel.DejaDrawViewUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DejaDrawView;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9FA90EF81B5547ED0072C55F /* Build configuration list for PBXProject "DejaDrawView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA90F231B5547ED0072C55F /* Debug */,
+				9FA90F241B5547ED0072C55F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FA90F251B5547ED0072C55F /* Build configuration list for PBXNativeTarget "DejaDrawView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA90F261B5547ED0072C55F /* Debug */,
+				9FA90F271B5547ED0072C55F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9FA90F281B5547ED0072C55F /* Build configuration list for PBXNativeTarget "DejaDrawViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA90F291B5547ED0072C55F /* Debug */,
+				9FA90F2A1B5547ED0072C55F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9FA90F2B1B5547ED0072C55F /* Build configuration list for PBXNativeTarget "DejaDrawViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA90F2C1B5547ED0072C55F /* Debug */,
+				9FA90F2D1B5547ED0072C55F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9FA90EF51B5547ED0072C55F /* Project object */;
+}
