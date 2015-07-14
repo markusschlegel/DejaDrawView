@@ -140,8 +140,24 @@ class DejaDrawView: UIView {
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else { return }
-        guard let stableTouches = UIEvent.coalescedTouchesForTouch(event!)(touch) else { return }
-        guard let predictedTouches = UIEvent.predictedTouchesForTouch(event!)(touch) else { return }
+        
+        let s: [UITouch]?
+        if #available(iOS 9.0, *) {
+            s = UIEvent.coalescedTouchesForTouch(event!)(touch)
+        } else {
+            s = [touch]
+        }
+        
+        guard let stableTouches = s else { return }
+        
+        let p: [UITouch]?
+        if #available(iOS 9.0, *) {
+            p = UIEvent.predictedTouchesForTouch(event!)(touch)
+        } else {
+            p = [touch]
+        }
+        
+        guard let predictedTouches = p else { return }
         
         self.history.removePredictedTouchPoints()
         
@@ -160,7 +176,15 @@ class DejaDrawView: UIView {
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else { return }
-        guard let stableTouches = UIEvent.coalescedTouchesForTouch(event!)(touch) else { return }
+
+        let s: [UITouch]?
+        if #available(iOS 9.0, *) {
+            s = UIEvent.coalescedTouchesForTouch(event!)(touch)
+        } else {
+            s = [touch]
+        }
+        
+        guard let stableTouches = s else { return }
         
         self.history.removePredictedTouchPoints()
         
