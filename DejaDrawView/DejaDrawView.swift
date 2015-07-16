@@ -204,13 +204,41 @@ class DejaDrawView: UIView {
 
     // MARK: Properties
     var history = TouchHistory()
-    var currentTool = Pen()
-    var shouldCommit = false
+    var currentTool = VaryingWidthPen()
     var committedImage = UIImage()
 
     
     
     // MARK: Methods
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.configure()
+    }
+    
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.configure()
+    }
+    
+    
+    
+    func configure() {
+        let long = UILongPressGestureRecognizer(target: self, action: Selector("erase:"))
+        self.addGestureRecognizer(long)
+    }
+    
+    
+    
+    func erase(rec: UIGestureRecognizer) {
+        committedImage = UIImage()
+        history = TouchHistory()
+        self.setNeedsDisplay()
+    }
+    
+    
+    
     override func drawRect(rect: CGRect) {
         self.committedImage.drawAtPoint(CGPointZero)
         self.currentTool.drawHistory(self.history)
