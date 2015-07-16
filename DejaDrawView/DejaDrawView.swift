@@ -107,6 +107,97 @@ class Pen: DrawingTool {
 
 
 
+class VaryingWidthPen: DrawingTool {
+    var maxWidth: CGFloat = 3.0
+    var minWidth: CGFloat = 1.0
+    var f: CGFloat = 0.02
+    
+    func drawHistory(history: TouchHistory) {
+        let path = self.bezierPathFromHistory(history)
+        UIColor.blackColor().setFill()
+        path.fillWithBlendMode(CGBlendMode.Darken, alpha: 1.0)
+    }
+    
+    func bezierPathFromHistory(history: TouchHistory) -> UIBezierPath {
+        guard history.touchPoints.count > 1 else { return UIBezierPath() }
+        
+        let path = UIBezierPath()
+        path.lineCapStyle = .Round
+        path.lineWidth = 1.0
+        
+        let tps = history.touchPoints.map { tp in return tp.point }
+        if tps.count >= 3 {
+            var upper = [tps[0]]
+            var lower = [tps[0]]
+            var prevprev: CGPoint!
+            var prev = tps[0]
+            var current = tps[1]
+            for i in 2 ..< tps.count {
+                prevprev = prev
+                prev = current
+                current = tps[i]
+                
+                let perp = perpendicular(prevprev, current)
+                let d1 = dist(prevprev, prev)
+                let d2 = dist(prev, current)
+                let r = maxWidth + minWidth - min(max(f * (d1 + d2), minWidth), maxWidth)
+                
+                upper.append(CGPoint(x: prev.x + r * perp.x, y: prev.y + r * perp.y))
+                lower.append(CGPoint(x: prev.x + -r * perp.x, y: prev.y + -r * perp.y))
+            }
+            upper.append(current)
+            
+            path.moveToPoint(upper.first!)
+            self.appendTouchPoints(path, touchPoints: upper)
+            self.appendTouchPoints(path, touchPoints: lower.reverse())
+            path.closePath()
+        } else {
+            // Dot
+            let first = tps[0]
+            let second = tps[1]
+            let mid = midPoint(first, second)
+            let midDist = dist(first, mid)
+    
+            path.moveToPoint(first)
+            let startAngle: CGFloat = 0.0
+            let endAngle: CGFloat = CGFloat(2.0 * M_PI)
+            path.addArcWithCenter(mid, radius: max(3.0, min(midDist, 1.0)), startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        }
+        
+        return path
+    }
+    
+    func appendTouchPoints(path: UIBezierPath, touchPoints: [CGPoint]) {
+        var prev = touchPoints[0]
+        var current = touchPoints[0]
+        
+        for i in 1 ..< touchPoints.count {
+            current = touchPoints[i]
+            let mid = midPoint(prev, current)
+            path.addQuadCurveToPoint(mid, controlPoint: prev)
+            prev = current
+        }
+        
+        path.addLineToPoint(current)
+    }
+    
+    func perpendicular(p1: CGPoint, _ p2: CGPoint) -> CGPoint {
+        let dx = p2.x - p1.x
+        let dy = p2.y - p1.y
+        let px = -dy
+        let py = dx
+        let len = sqrt(pow(px, 2) + pow(py, 2))
+        
+        return CGPointMake(px / len, py / len)
+    }
+    
+    func clamp(d: CGFloat) -> CGFloat {
+        return max(min(8.0, d), 2.0)
+    }
+}
+
+
+
 // MARK: - DejaDrawView
 
 class DejaDrawView: UIView {
