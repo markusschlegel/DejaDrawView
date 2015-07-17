@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
                        A UIView subclass that lets you draw on screen with your finger. DejaDrawView makes use of Touch Prediction and supports arbitrary touch sampling rates thanks to Touch Coalescing. The project is structured in a way that makes it easy for you to create your own drawing tools (pen, paint brush, pencil …).
                        DESC
   s.homepage         = "https://github.com/markusschlegel/DejaDrawView"
-  s.screenshots     = "markusschlegel.github.io/JamesBond.PNG"
+  s.screenshots     = "http://markusschlegel.github.io/JamesBond.PNG"
   s.license          = 'MIT'
   s.author           = { "Markus Schlegel" => "mail@markus-schlegel.com" }
   s.source           = { :git => "https://github.com/markusschlegel/DejaDrawView.git", :tag => s.version.to_s }
