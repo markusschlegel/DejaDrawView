@@ -13,52 +13,52 @@ import UIKit
 
 // MARK: Data structures
 
-enum TouchPointStatus {
+public enum TouchPointStatus {
     case Stable
     case Predicted
 }
 
 
 
-struct TouchPoint {
+public struct TouchPoint {
     let point: CGPoint
     let status: TouchPointStatus
 }
 
 
 
-struct TouchHistory {
-    var touchPoints = [TouchPoint]()
+public struct TouchHistory {
+    public var touchPoints = [TouchPoint]()
     
-    func stableTouchPoints() -> [TouchPoint] {
+    public func stableTouchPoints() -> [TouchPoint] {
         return self.touchPoints.filter {
             elem in return elem.status == .Stable
         }
     }
     
-    func predictedTouchPoints() -> [TouchPoint] {
+    public func predictedTouchPoints() -> [TouchPoint] {
         return self.touchPoints.filter {
             elem in return elem.status == .Predicted
         }
     }
     
-    func lastStablePoint() -> CGPoint? {
+    public func lastStablePoint() -> CGPoint? {
         return self.stableTouchPoints().last?.point
     }
     
-    mutating func appendStablePoint(point: CGPoint) {
+    mutating public func appendStablePoint(point: CGPoint) {
         self.touchPoints.append(TouchPoint(point: point, status: .Stable))
     }
     
-    mutating func appendPredictedPoint(point: CGPoint) {
+    mutating public func appendPredictedPoint(point: CGPoint) {
         self.touchPoints.append(TouchPoint(point: point, status: .Predicted))
     }
     
-    mutating func appendTouchPoint(touchPoint: TouchPoint) {
+    mutating public func appendTouchPoint(touchPoint: TouchPoint) {
         self.touchPoints.append(touchPoint)
     }
     
-    mutating func removePredictedTouchPoints() {
+    mutating public func removePredictedTouchPoints() {
         while self.touchPoints.last?.status == .Predicted {
             self.touchPoints.removeLast()
         }
@@ -68,57 +68,32 @@ struct TouchHistory {
 
 
 // MARK: - Tools
-protocol DrawingTool {
-    func drawHistory(history: TouchHistory)
+public protocol DrawingTool {
+     func drawHistory(history: TouchHistory)
 }
 
 
 
-class Pen: DrawingTool {
-    func drawHistory(history: TouchHistory) {
-        let path = self.bezierPathFromHistory(history)
-        UIColor.blackColor().setStroke()
-        path.stroke()
-    }
+public class VaryingWidthPen: DrawingTool {
     
-    func bezierPathFromHistory(history: TouchHistory) -> UIBezierPath {
-        guard history.touchPoints.count > 0 else { return UIBezierPath() }
-        
-        let path = UIBezierPath()
-        path.lineCapStyle = .Round
-        path.lineWidth = 4.0
-        
-        var prev = history.touchPoints[0].point
-        var current = history.touchPoints[0].point
-        path.moveToPoint(prev)
-        
-        for i in 1 ..< history.touchPoints.count {
-            current = history.touchPoints[i].point
-            let mid = midPoint(prev, current)
-            path.addQuadCurveToPoint(mid, controlPoint: prev)
-            prev = current
-        }
-        
-        path.addLineToPoint(current)
-        
-        return path
-    }
-}
-
-
-
-class VaryingWidthPen: DrawingTool {
-    var maxWidth: CGFloat = 3.0
-    var minWidth: CGFloat = 1.0
-    var f: CGFloat = 0.02
+    // MARK: Properties
+    public var maxWidth: CGFloat = 3.0
+    public var minWidth: CGFloat = 1.0
+    public var f: CGFloat = 0.02
     
-    func drawHistory(history: TouchHistory) {
+    
+    
+    // MARK: Protocol emplementations
+    public func drawHistory(history: TouchHistory) {
         let path = self.bezierPathFromHistory(history)
         UIColor.blackColor().setFill()
         path.fillWithBlendMode(CGBlendMode.Darken, alpha: 1.0)
     }
     
-    func bezierPathFromHistory(history: TouchHistory) -> UIBezierPath {
+    
+    
+    // MARK: Helpers
+    private func bezierPathFromHistory(history: TouchHistory) -> UIBezierPath {
         guard history.touchPoints.count > 1 else { return UIBezierPath() }
         
         let path = UIBezierPath()
@@ -155,8 +130,8 @@ class VaryingWidthPen: DrawingTool {
             // Dot
             let first = tps[0]
             let second = tps[1]
-            let mid = midPoint(first, second)
-            let midDist = dist(first, mid)
+            let mid = self.midPoint(first, second)
+            let midDist = self.dist(first, mid)
     
             path.moveToPoint(first)
             let startAngle: CGFloat = 0.0
@@ -167,13 +142,13 @@ class VaryingWidthPen: DrawingTool {
         return path
     }
     
-    func appendTouchPoints(path: UIBezierPath, touchPoints: [CGPoint]) {
+    private func appendTouchPoints(path: UIBezierPath, touchPoints: [CGPoint]) {
         var prev = touchPoints[0]
         var current = touchPoints[0]
         
         for i in 1 ..< touchPoints.count {
             current = touchPoints[i]
-            let mid = midPoint(prev, current)
+            let mid = self.midPoint(prev, current)
             path.addQuadCurveToPoint(mid, controlPoint: prev)
             prev = current
         }
@@ -181,7 +156,7 @@ class VaryingWidthPen: DrawingTool {
         path.addLineToPoint(current)
     }
     
-    func perpendicular(p1: CGPoint, _ p2: CGPoint) -> CGPoint {
+    private func perpendicular(p1: CGPoint, _ p2: CGPoint) -> CGPoint {
         let dx = p2.x - p1.x
         let dy = p2.y - p1.y
         let px = -dy
@@ -198,7 +173,23 @@ class VaryingWidthPen: DrawingTool {
         return CGPointMake(px * f, py * f)
     }
     
-    func clamp(d: CGFloat) -> CGFloat {
+    
+    
+    private func dist(a: CGPoint, _ b: CGPoint) -> CGFloat {
+        let r2: CGFloat = pow(b.x - a.x, 2.0)
+        let s2: CGFloat = pow(b.y - a.y, 2.0)
+        return sqrt(r2 + s2)
+    }
+    
+    
+    
+    private func midPoint(a: CGPoint, _ b: CGPoint) -> CGPoint {
+        return CGPointMake(0.5 * (a.x + b.x), 0.5 * (a.y + b.y))
+    }
+    
+    
+    
+    private func clamp(d: CGFloat) -> CGFloat {
         return max(min(8.0, d), 2.0)
     }
 }
@@ -207,38 +198,38 @@ class VaryingWidthPen: DrawingTool {
 
 // MARK: - DejaDrawView
 
-class DejaDrawView: UIView {
+public class DejaDrawView: UIView {
 
     // MARK: Properties
-    var history = TouchHistory()
-    var currentTool = VaryingWidthPen()
-    var committedImage = UIImage()
+    private var history = TouchHistory()
+    public var currentTool = VaryingWidthPen()
+    public var committedImage = UIImage()
 
     
     
-    // MARK: Methods
-    required init(coder aDecoder: NSCoder) {
+    // MARK: General
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.configure()
     }
     
     
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.configure()
     }
     
     
     
-    func configure() {
+    private func configure() {
         let long = UILongPressGestureRecognizer(target: self, action: Selector("erase:"))
         self.addGestureRecognizer(long)
     }
     
     
     
-    func erase(rec: UIGestureRecognizer) {
+    public func erase(rec: UIGestureRecognizer) {
         committedImage = UIImage()
         history = TouchHistory()
         self.setNeedsDisplay()
@@ -246,14 +237,15 @@ class DejaDrawView: UIView {
     
     
     
-    override func drawRect(rect: CGRect) {
+    override public func drawRect(rect: CGRect) {
         self.committedImage.drawAtPoint(CGPointZero)
         self.currentTool.drawHistory(self.history)
     }
     
     
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    // MARK: Handling touches
+    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else { return }
         
         let currentPoint = touch.locationInView(self)
@@ -264,7 +256,7 @@ class DejaDrawView: UIView {
     
     
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else { return }
         
         let s: [UITouch]?
@@ -300,7 +292,7 @@ class DejaDrawView: UIView {
     
     
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else { return }
 
         let s: [UITouch]?
@@ -330,36 +322,3 @@ class DejaDrawView: UIView {
         self.setNeedsDisplay()
     }
 }
-
-
-
-// MARK: - Geometry functions
-
-func controlPoints(a: CGPoint, _ b: CGPoint, _ c: CGPoint, t: CGFloat) -> (CGPoint, CGPoint) {
-    let d_ab = dist(a, b)
-    let d_bc = dist(b, c)
-    let fa = t * d_ab / (d_ab + d_bc)
-    let fb = t * d_bc / (d_ab + d_bc)
-    let r = CGPointMake(b.x - fa * (c.x - a.x), b.y - fa * (c.y - a.y))
-    let s = CGPointMake(b.x + fb * (c.x - a.x), b.y + fb * (c.y - a.y))
-    
-    return (r, s);
-}
-
-
-
-func dist(a: CGPoint, _ b: CGPoint) -> CGFloat {
-    let r2: CGFloat = pow(b.x - a.x, 2.0)
-    let s2: CGFloat = pow(b.y - a.y, 2.0)
-    return sqrt(r2 + s2)
-}
-
-
-
-func midPoint(a: CGPoint, _ b: CGPoint) -> CGPoint {
-    return CGPointMake(0.5 * (a.x + b.x), 0.5 * (a.y + b.y))
-}
-
-
-
-
