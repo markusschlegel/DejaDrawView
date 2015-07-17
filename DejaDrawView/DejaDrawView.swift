@@ -188,7 +188,14 @@ class VaryingWidthPen: DrawingTool {
         let py = dx
         let len = sqrt(pow(px, 2) + pow(py, 2))
         
-        return CGPointMake(px / len, py / len)
+        let f: CGFloat
+        if len == 0.0 {
+            f = 0.0
+        } else {
+            f = 1.0 / len
+        }
+        
+        return CGPointMake(px * f, py * f)
     }
     
     func clamp(d: CGFloat) -> CGFloat {
